@@ -56,6 +56,9 @@ function expressionCalculator(expr) {
             strnumbers = strnumbers + " ";
             while(getP(stack[stack.length-1]) != 1){
                 strnumbers = strnumbers + stack.pop();
+                if(stack.length == 0){
+                    throw new Error("ExpressionError: Brackets must be paired");
+                }
             }
             stack.pop();
         }
